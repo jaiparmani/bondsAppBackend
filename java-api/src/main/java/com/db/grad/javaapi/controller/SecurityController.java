@@ -24,11 +24,15 @@ public class SecurityController {
 	private SecurityRepository securityRepository;
 	
 	@GetMapping("/security")
+	@CrossOrigin(origins = "http://localhost:3000")
+
 	public List<Security> getSecurity() {	
 		return securityRepository.findAll();
 	}
 	
 	@GetMapping("/security/{id}")
+	@CrossOrigin(origins = "http://localhost:3000")
+	
     public ResponseEntity < Security > getSecurityById2(@PathVariable(value = "id") int id)
     throws ResourceNotFoundException {
         Security security = securityRepository.findById(id)
@@ -37,6 +41,7 @@ public class SecurityController {
     }
 	
 	@GetMapping("/security/date")
+	@CrossOrigin(origins = "http://localhost:3000")
 	public List<Security> getSecurityInDateRange(@RequestParam("from") @DateTimeFormat(pattern="yyyy-MM-dd") Date from_date, @RequestParam("to") @DateTimeFormat(pattern="yyyy-MM-dd") Date to_date) {
 		return securityRepository.findByMaturityDateBetween(from_date, to_date);
 	}

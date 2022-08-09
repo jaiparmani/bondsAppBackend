@@ -31,12 +31,16 @@ public class TradeController {
 	private TradeRepository tradeRepository;
 	
 	@GetMapping("/trade")
+	@CrossOrigin(origins = "http://localhost:3000")
+
 	public List<Trade> getTrade() {
 		
 		return tradeRepository.findAll();
 	}
 	
 	@PostMapping("/trade")
+	@CrossOrigin(origins = "http://localhost:3000")
+
 	public Trade createTrade(@Valid @RequestBody Trade Trade) {
 		
 		return tradeRepository.saveAndFlush(Trade);
