@@ -37,7 +37,6 @@ public class TradeController {
 		
 		return tradeRepository.findAll();
 	}
-	
 	@PostMapping("/trade")
 	@CrossOrigin(origins = "http://localhost:3000")
 
