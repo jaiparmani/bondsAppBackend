@@ -21,30 +21,60 @@ import com.db.grad.javaapi.repository.SecurityRepository;
 @RequestMapping("/api/v1")
 public class SecurityController {
 	
+	// @Autowired
+	// private SecurityRepository securityRepository;
+	
+	// @GetMapping("/security")
+	// @CrossOrigin(origins = "*")
+
+	// public List<Security> getSecurity() {	
+	// 	return securityRepository.findAll();
+	// }
+	
+	// @GetMapping("/security/{id}")
+	// @CrossOrigin(origins = "*")
+	
+    // public ResponseEntity < Security > getSecurityById2(@PathVariable(value = "id") int id)
+    // throws ResourceNotFoundException {
+    //     Security security = securityRepository.findById(id)
+    //         .orElseThrow(() -> new ResourceNotFoundException("Security not found for this id :: " + id));
+    //     return ResponseEntity.ok().body(security);
+    // }
+	
+
+	// @GetMapping("/security/date")
+	// @CrossOrigin(origins = "*")
+	// public List<Security> getSecurityInDateRange(@RequestParam("from") @DateTimeFormat(pattern="yyyy-MM-dd") Date from_date, @RequestParam("to") @DateTimeFormat(pattern="yyyy-MM-dd") Date to_date) {
+	// 	return securityRepository.findByMaturityDateBetween(from_date, to_date);
+	// }
+
 	@Autowired
 	private SecurityRepository securityRepository;
 	
-	@GetMapping("/security")
-	@CrossOrigin(origins = "http://localhost:3000")
-
+	@GetMapping("/security/all")
+	@CrossOrigin(origins = "*")
 	public List<Security> getSecurity() {	
 		return securityRepository.findAll();
 	}
 	
-	@GetMapping("/security/{id}")
-	@CrossOrigin(origins = "http://localhost:3000")
-	
-    public ResponseEntity < Security > getSecurityById2(@PathVariable(value = "id") int id)
-    throws ResourceNotFoundException {
-        Security security = securityRepository.findById(id)
-            .orElseThrow(() -> new ResourceNotFoundException("Security not found for this id :: " + id));
-        return ResponseEntity.ok().body(security);
-    }
-	
-	@GetMapping("/security/date")
-	@CrossOrigin(origins = "http://localhost:3000")
-	public List<Security> getSecurityInDateRange(@RequestParam("from") @DateTimeFormat(pattern="yyyy-MM-dd") Date from_date, @RequestParam("to") @DateTimeFormat(pattern="yyyy-MM-dd") Date to_date) {
-		return securityRepository.findByMaturityDateBetween(from_date, to_date);
+	// @GetMapping("/security/all/date")
+	// @CrossOrigin(origins = "*")
+	// public List<Security> getSecurityInDateRange(@RequestParam("from") @DateTimeFormat(pattern="yyyy-MM-dd") Date from_date, @RequestParam("to") @DateTimeFormat(pattern="yyyy-MM-dd") Date to_date) {
+	// 	return securityRepository.findByMaturityDateBetween(from_date, to_date);
+
+	// }
+
+	@GetMapping("security/{uid}")
+	@CrossOrigin(origins = "*")
+	public List<Security> getAllSecurityForUser(@PathVariable(value = "uid") int uid){
+		return securityRepository.getAllSecurityForUser(uid);
 	}
-	
+
+@GetMapping("/security/{uid}/date")
+	@CrossOrigin(origins = "*")
+	public List<Security> getAllSecurityForUserBetweenDateRange(@PathVariable(value = "uid") int uid, @RequestParam("from") @DateTimeFormat(pattern="yyyy-MM-dd") Date from_date, @RequestParam("to") @DateTimeFormat(pattern="yyyy-MM-dd") Date to_date) {
+		return securityRepository.getAllSecurityForUserBetweenDateRange(uid, from_date, to_date);
+	}
+
+
 }

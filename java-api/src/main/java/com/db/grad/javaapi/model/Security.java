@@ -31,14 +31,14 @@ public class Security {
 	private String type;
 	private int face_value;
 	private String status;
-	
+	private String issuer;
 	
 	public Security() {
 		super();
 	}
 	
 	public Security(int securityid, String isin, String cusip, Date maturity_date, float coupon, String type,
-			int facevalue, String status) {
+			int facevalue, String status, String issuer) {
 		super();
 		this.securityid = securityid;
 		this.isin = isin;
@@ -48,6 +48,7 @@ public class Security {
 		this.type = type;
 		this.face_value = facevalue;
 		this.status = status;
+		this.issuer = issuer;
 	}
 
 
@@ -128,6 +129,15 @@ public class Security {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getIssuer() {
+		return issuer;
+	}
+
+
+	public void setIssuer(String issuer) {
+		this.issuer = issuer;
 	}
 	
 	

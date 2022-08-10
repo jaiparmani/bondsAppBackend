@@ -1,12 +1,42 @@
+INSERT INTO BOOK (bookid, book_name) VALUES (1, 'Government Bonds'),
+                                              (2, 'Corporate Bonds'),
+                                              (3, 'Municipal Bonds');
 
-INSERT INTO Book (bookid, book_name)
-VALUES (101,'Book1');
+INSERT INTO Security (securityid, ISIN, CUSIP, issuer, maturity_date, coupon, type, face_value, status) VALUES
+                    (1, 54567, 987651, 'Apple', '2004-02-01', 2, 'corporate', 100, 'ACTIVE' ),
+                    (2, 62378, 143219, 'Dell', '2007-08-21', 1.3, 'corporate', 50, 'ACTIVE' ),
+                    (3, 62379, 654321, 'Government', '2002-01-01', 1.9, 'government', 10, 'ACTIVE' ),
+                    (4, 62300, 432198, 'Samsung', '2005-03-31', 3.6, 'corporate', 100, 'ACTIVE' ),
+                    (5, 12457, 432198, 'Muncipal', '2009-05-10', 1.5, 'municipal', 250, 'ACTIVE' );
 
-INSERT INTO counter_Party (counterpartyid,counter_party_name) 
-VALUES (501, 'Ram Jain');
+INSERT INTO USERD (userid, name, email, role) VALUES (1, 'Jitesh', 'jitesh@gmail.com', 'customer'),
+                                        (2, 'Jaimin', 'jaimin@gmail.com', 'customer'),
+                                        (3, 'Himanshu', 'himanshu@gmail.com', 'customer'),
+                                        (4, 'Jai', 'jai@gmail.com', 'operation'),
+                                        (5, 'Divya', 'divya@gmail.com', 'operation'),
+                                        (6, 'Dipashri', 'dipashri@gmail.com', 'operation');
 
-INSERT INTO Security(securityid, isin, cusip ,issuer , maturity_date, coupon, type, facevalue, status)
-VALUES (301, '12AlphaNumer' ,'9lettrnum', 'Deutsche Bank', '2022-08-06', 2, 'government' , 10000, TRUE);
 
-INSERT INTO Trade (tradeid,bookid,counterpartyid, securityid, quantity, status, price, buy_sell,trade_date,settlement_date)
-VALUES (402,101,501,301,1,TRUE,1000,'buy','2022-08-05','2022-08-07');
+INSERT INTO COUNTER_PARTY (counterpartyid, counter_party_name) VALUES (1, 'Farhan'),
+                                   (2, 'Harshwardhan'),
+                                   (3, 'Deep'),
+                                   (4, 'Raunak'),
+                                   (5, 'Rushikesh');
+INSERT INTO Trade (tradeid,  securityid, counterpartyid, bookid, quantity, status, price, buy_sell, trade_date, settlement_date) VALUES
+                     (1,1,1,1, 3, 'SETTLED', 270, 'sell', '2008-11-11', '2008-11-12'),
+                     (2,2,1,1, 3, 'SETTLED', 270, 'buy', '2008-11-11', '2008-11-12'),
+                     (3,3,1,2, 3, 'SETTLED', 270, 'sell', '2008-11-11', '2008-11-12'),
+                     (4,2,1,3, 3, 'SETTLED', 270, 'buy', '2008-11-11', '2008-11-12'),
+                     (5,3,1,1, 3, 'SETTLED', 270, 'sell', '2022-01-11', '2022-08-13'),
+                     (6,4,1,1, 3, 'SETTLED', 270, 'buy', '2020-11-11', '2023-10-12'),
+                     (7,5,4,2, 3, 'UNSETTLED', 250, 'sell', '2009-10-11', '2009-10-12'),
+                     (8,2,1,3, 3, 'SETTLED', 250, 'buy', '2008-11-11', '2008-11-12'),
+                     (9,3,2,2, 3, 'SETTLED', 220, 'sell', '2012-11-11', '2012-11-12'),
+                     (10,1,3,1, 3, 'SETTLED', 220, 'buy', '2021-11-11', '2022-11-12');
+insert into book_user(bookid, userid) values (1, 1), (2, 1), (3, 2), (1,2),
+                                     (2,2),
+                                     (3,4),
+                                     (1,5),
+                                     (3,5),
+                                     (2,3);;
+                     

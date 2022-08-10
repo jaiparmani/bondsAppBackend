@@ -9,8 +9,7 @@ CREATE TABLE Userd (
 userid INT primary key,
 name VARCHAR(250) NOT NULL,
 email VARCHAR(250),
-role VARCHAR(250),
-password VARCHAR(250),
+role VARCHAR(250)
 );
 
 CREATE TABLE Book (
@@ -31,7 +30,7 @@ issuer VARCHAR(250),
 maturity_date DATE,
 coupon FLOAT, 
 type VARCHAR(250), 
-face_value INT, 
+facevalue INT, 
 status VARCHAR(250)
 );
 
