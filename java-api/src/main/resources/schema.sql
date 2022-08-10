@@ -8,8 +8,9 @@ DROP TABLE IF EXISTS Book_User;
 CREATE TABLE Userd (
 userid INT primary key,
 name VARCHAR(250) NOT NULL,
-email VARCHAR(250),
-role VARCHAR(250)
+email VARCHAR(250) unique,
+role VARCHAR(250),
+password varchar (100)
 );
 
 CREATE TABLE Book (
