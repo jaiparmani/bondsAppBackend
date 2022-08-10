@@ -9,12 +9,12 @@ INSERT INTO Security (securityid, ISIN, CUSIP, issuer, maturity_date, coupon, ty
                     (4, 62300, 432198, 'Samsung', '2005-03-31', 3.6, 'corporate', 100, 'ACTIVE' ),
                     (5, 12457, 432198, 'Muncipal', '2009-05-10', 1.5, 'municipal', 250, 'ACTIVE' );
 
-INSERT INTO USERD (userid, name, email, role) VALUES (1, 'Jitesh', 'jitesh@gmail.com', 'customer'),
-                                        (2, 'Jaimin', 'jaimin@gmail.com', 'customer'),
-                                        (3, 'Himanshu', 'himanshu@gmail.com', 'customer'),
-                                        (4, 'Jai', 'jai@gmail.com', 'operation'),
-                                        (5, 'Divya', 'divya@gmail.com', 'operation'),
-                                        (6, 'Dipashri', 'dipashri@gmail.com', 'operation');
+INSERT INTO USERD (userid, name, email, role,password) VALUES (1, 'Jitesh', 'jitesh@gmail.com', 'customer','1234'),
+                                        (2, 'Jaimin', 'jaimin@gmail.com', 'customer','2345'),
+                                        (3, 'Himanshu', 'himanshu@gmail.com', 'customer','5354'),
+                                        (4, 'Jai', 'jai@gmail.com', 'operation','345435'),
+                                        (5, 'Divya', 'divya@gmail.com', 'operation','34321'),
+                                        (6, 'Dipashri', 'dipashri@gmail.com', 'operation','6867');
 
 
 INSERT INTO COUNTER_PARTY (counterpartyid, counter_party_name) VALUES (1, 'Farhan'),
