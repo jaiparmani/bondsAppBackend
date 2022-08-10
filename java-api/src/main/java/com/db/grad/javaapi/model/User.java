@@ -20,18 +20,20 @@ public class User {
 	private String name;
 	private String email;
 	private String role;
+	private String password;
 	
-	
-	public User(int userid, String name, String email, String role) {
+	public User() {}
+	public User(int userid, String name, String email, String role,String password) {
 		super();
 		this.userid = userid;
 		this.name = name;
 		this.email = email;
 		this.role = role;
+		this.password=password;
 	}
 
 	public int getUserid() {
-		return userid;
+		return this.userid;
 	}
 
 
@@ -67,6 +69,12 @@ public class User {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+	public void setPassword(String pass) {
+		this.password=pass;
+	}
+	public String getPassword() {
+		return this.password;
 	}
 	
 }
